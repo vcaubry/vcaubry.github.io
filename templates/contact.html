@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="contact">
+    <div class="container">
+        <h2>Contact</h2>
+        <p>Please email me for any questions or to sign up for tutoring.</p>
+        <p>You will hear back within a few days of reaching out.</p>
+
+        <p style="font-weight:bold">Current offer! Get a 10% Discount for:
+            <ul style="list-style:initial">
+                <li>
+                    Registering before October 15, 2019
+                </li>
+                <li>
+                    Referring a friend (for you and your friend) 
+                </li>
+                <li>
+                    Referring a sibling  
+                </li>
+            </ul>
+        </p>
+        <div style="color:red">
+            {% for message in get_flashed_messages() %}
+                {{ message }}
+            {% endfor %}
+        </div>
+        <form class="ui small form" action="https://formspree.io/vcaubry@gmail.com" method="POST">
+            <div class="required field">
+                <label>Name</label>
+                <br>
+                <input name="name" placeholder="Jane Doe" type="text">
+            </div>
+            <input type="hidden" name="_subject" value="Someone has contacted you about your tutoring services!" />
+            <div class="required field">
+                <label>Email</label>
+                <br>
+                <input name="_replyto" placeholder="janedoe@email.com" type="email">
+            </div>
+            <div class="required field">
+                <label>Message</label>
+                <br>
+                <textarea name="message" placeholder="Write a message here." rows="2"></textarea>
+            </div>
+            <input type="hidden" name="_next" value="https://aubrytutoring.com" /> 
+            <input type="text" name="_gotcha" style="display:none" value="gotcha!" />
+            <button type="submit" class="ui submit button">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
