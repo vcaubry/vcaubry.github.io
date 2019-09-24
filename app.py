@@ -46,6 +46,18 @@ def testimonials():
 
 @app.route('/contact', methods=["GET","POST"])
 def contact():
+    # form = ContactForm()
+    # if request.method == 'POST':
+    #     if form.validate_on_submit():
+    #         msg = Message(form.subject.data, sender=username, recipients=["vcaubry@gmail.com"])
+    #         msg.body = """
+    #         From %s <%s>
+    #         %s
+    #         """ % (form.name.data, form.email.data, form.message.data)
+    #         mail.send(msg)
+    #         flash("Message sent!")
+    #     flash("Please fill out all fields to submit.")
+    #     return redirect(url_for("contact"))
     return render_template("contact.html")
 
 if __name__ == '__main__':
