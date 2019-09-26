@@ -3,6 +3,7 @@ from flask import Flask, redirect, render_template, url_for, request, flash
 from flask_script import Manager, Shell
 from flask_mail import Message, Mail
 from flask_wtf import FlaskForm
+from flask_frozen import Freezer
 from wtforms import Form, TextField, TextAreaField, SubmitField
 from wtforms.validators import Required, Email
 from contact import username
