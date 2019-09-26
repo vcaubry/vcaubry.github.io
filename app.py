@@ -16,24 +16,11 @@ app = Flask(__name__)
 app.debug = True
 app.secret_key = 'Toasted bread is the best thing since sliced bread'
 
-# app.config["MAIL_SERVER"] = "smtp.gmail.com"
-# app.config["MAIL_PORT"] = 465
-# app.config["MAIL_USE_SSL"] = True
-# app.config["MAIL_USERNAME"] = username
-
 app.config.from_pyfile('settings.py')
-# app.config["MAIL_PASSWORD"] = password
 
 mail.init_app(app)
 
 manager = Manager(app)
-
-# class ContactForm(FlaskForm):
-#     email = TextField("Email", validators=[Required(), Email()], description="Email", render_kw={"placeholder": "Email"})
-#     name = TextField("Name", validators=[Required()], description="Name", render_kw={"placeholder": "Name"})
-#     subject = TextField("Subject", validators=[Required()], description="Subject", render_kw={"placeholder": "Subject"})
-#     message = TextAreaField("Message", validators=[Required()], description="Message", render_kw={"placeholder": "Message"})
-#     submit = SubmitField('Submit')
 
 @app.route('/')
 def about():
@@ -49,18 +36,6 @@ def testimonials():
 
 @app.route('/contact', methods=["GET","POST"])
 def contact():
-    # form = ContactForm()
-    # if request.method == 'POST':
-    #     if form.validate_on_submit():
-    #         msg = Message(form.subject.data, sender=username, recipients=["vcaubry@gmail.com"])
-    #         msg.body = """
-    #         From %s <%s>
-    #         %s
-    #         """ % (form.name.data, form.email.data, form.message.data)
-    #         mail.send(msg)
-    #         flash("Message sent!")
-    #     flash("Please fill out all fields to submit.")
-    #     return redirect(url_for("contact"))
     return render_template("contact.html")
 
 if __name__ == '__main__':
