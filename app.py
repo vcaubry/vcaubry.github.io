@@ -28,16 +28,16 @@ mail.init_app(app)
 
 manager = Manager(app)
 
-class ContactForm(FlaskForm):
-    email = TextField("Email", validators=[Required(), Email()], description="Email", render_kw={"placeholder": "Email"})
-    name = TextField("Name", validators=[Required()], description="Name", render_kw={"placeholder": "Name"})
-    subject = TextField("Subject", validators=[Required()], description="Subject", render_kw={"placeholder": "Subject"})
-    message = TextAreaField("Message", validators=[Required()], description="Message", render_kw={"placeholder": "Message"})
-    submit = SubmitField('Submit')
+# class ContactForm(FlaskForm):
+#     email = TextField("Email", validators=[Required(), Email()], description="Email", render_kw={"placeholder": "Email"})
+#     name = TextField("Name", validators=[Required()], description="Name", render_kw={"placeholder": "Name"})
+#     subject = TextField("Subject", validators=[Required()], description="Subject", render_kw={"placeholder": "Subject"})
+#     message = TextAreaField("Message", validators=[Required()], description="Message", render_kw={"placeholder": "Message"})
+#     submit = SubmitField('Submit')
 
 @app.route('/')
 def about():
-    return render_template("about.html")
+    return render_template("index.html")
 
 @app.route('/services')
 def services():
