@@ -16,10 +16,12 @@ app = Flask(__name__)
 app.debug = True
 app.secret_key = 'Toasted bread is the best thing since sliced bread'
 
-app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config["MAIL_PORT"] = 465
-app.config["MAIL_USE_SSL"] = True
-app.config["MAIL_USERNAME"] = username
+# app.config["MAIL_SERVER"] = "smtp.gmail.com"
+# app.config["MAIL_PORT"] = 465
+# app.config["MAIL_USE_SSL"] = True
+# app.config["MAIL_USERNAME"] = username
+
+app.config.from_pyfile('settings.py')
 # app.config["MAIL_PASSWORD"] = password
 
 mail.init_app(app)
