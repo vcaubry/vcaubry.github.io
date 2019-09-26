@@ -10,15 +10,11 @@ from contact import username
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-mail = Mail()
-
 app = Flask(__name__)
 app.debug = True
 app.secret_key = 'Toasted bread is the best thing since sliced bread'
 
 app.config.from_pyfile('settings.py')
-
-mail.init_app(app)
 
 manager = Manager(app)
 
