@@ -19,22 +19,18 @@ app.config.from_pyfile('settings.py')
 manager = Manager(app)
 
 @app.route('/')
-@app.route('/index.html')
 def about():
     return render_template("index.html")
 
 @app.route('/services')
-@app.route('/services.html')
 def services():
     return render_template("services.html")
 
 @app.route('/testimonials')
-@app.route('/testimonials.html')
 def testimonials():
     return render_template("testimonials.html")
 
 @app.route('/contact', methods=["GET","POST"])
-@app.route('/contact.html')
 def contact():
     return render_template("contact.html")
 
