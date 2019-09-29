@@ -141,6 +141,10 @@ textarea {
     margin-bottom: 1%;
 }
 
+.gotcha {
+    display: none !important; 
+}
+
 @media (min-width: 767px) {
 
 
