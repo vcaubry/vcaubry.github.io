@@ -1,17 +1,40 @@
 <!DOCTYPE html>
-{% extends "base.html" %}
-{% block content %}
-<div class="about">
-    <div class="container">
-        <h2>About</h2>
-        <div class="content">
-            <p>
-                <img src="/static/images/valerie.jpg" width="300px"/>
-                Valerie Aubry graduated summa cum laude from Amherst College and is a New York State certified teacher with nearly a decade of experience teaching students in grades seven through twelve. She has a Master’s degree in Social Studies Education from Teachers College, Columbia University and additional graduate credits in teen literacy and teaching students with special needs. As a tutor, Valerie loves helping students grow as confident critical thinkers and writers who do their best in the ACT/SAT (Verbal), History Regents and AP exams, and course and college application essays.                  <br>
-                <br>
-                As a debate coach, Valerie led her students to win the top championship awards in a county-wide moot court competition in Westchester, New York. Before teaching, she worked as the Law and Social Science Editor at Oxford University Press, New York and a Developmental Editor of social science textbooks at D.C. Heath in Massachusetts. 
-            </p>
+<html>
+    <head>
+        <title>Aubry Tutoring</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Quality tutoring in Westchester County at affordable rates.">
+        <meta name="keywords" content="tutoring, exams, exam tutoring, essays, essay tutoring, homework, homework tutoring, Westchester, westchester tutoring,
+        rivertowns, rivertowns tutoring, affordable tutoring, high school tutor, high school tutoring, middle school tutor, middle school tutoring" />
+        <meta name="author" content="Valerie Aubry">
+        <link rel="icon" href="/static/images/icon.png">
+        <link rel="stylesheet" href="/static/css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src https://vcaubry.github.io/; child-src 'self'; object-src 'self'; img-src 'self'"> -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com"> -->
+
+    </head>
+    <body>
+        <div class="header">
+            <h1>Aubry Tutoring</h1>
+            <div class="navbar">
+                <ul class="links">
+                    <li>
+                        <a href="{{ url_for('about') }}">About</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('services') }}">Services</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('testimonials') }}">Testimonials</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('contact') }}">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</div>
-{% endblock %}
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
