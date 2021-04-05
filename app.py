@@ -9,7 +9,7 @@ from contact import username
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="docs/")
 app.debug = True
 app.secret_key = 'Toasted bread is the best thing since sliced bread'
 
